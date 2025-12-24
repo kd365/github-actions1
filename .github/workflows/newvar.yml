@@ -15,3 +15,16 @@ jobs:
         run: |
           echo "Variable: ${{ vars.MY_VARIABLE }}"
           echo "Secret: ${{ secrets.MY_SECRET }}"
+      - name: Built in System Environment Variables
+        run: |
+          echo "HOME: $HOME"
+          echo "PATH: $PATH"
+          echo "USER: $USER"
+          echo "PWD: $PWD"
+      - name: Custom Environment Variables
+        env:
+          CUSTOM_VAR: "custom-value"
+          ANOTHER_VAR: "another-value"
+        run: |
+          echo "Custom: $CUSTOM_VAR"
+          echo "Another: $ANOTHER_VAR"
